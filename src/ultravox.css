@@ -1,12 +1,14 @@
 body {
   background-color: #1b1b1b;
   font-family: poppins;
-  color: aliceblue;
+  color: #f0f8ff;
   /* padding: 32px; */
   box-sizing: border-box;
   /* width: 100vw; */
   box-sizing: border-box;
   /* height: 1000vh; */
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="5" cy="5" r="5" fill="%23f0f8ff25" /%3E%3C/svg%3E');
+  background-size: 10px 10px; /* Adjust size to control spacing */
 }
 
 button {
@@ -119,10 +121,18 @@ header {
   color: #ffffff;
 }
 
+.tech-video {
+  z-index: -1;
+  right: 0;
+  top: -50px;
+}
+
 .tryout-body {
   border: 1px solid #ffffff;
   padding: 16px;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
   /* height: 240px; */
 }
 
@@ -166,6 +176,38 @@ header {
   width: 60%;
   font-size: 14px;
 }
+.page-4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.page-4-vid,
+.page4-text {
+  width: 50%;
+}
+
+.page-4-vid {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-4-title {
+  width: 100%;
+}
+
+.box-video {
+  width: 150%;
+  height: 150%;
+  object-fit: cover; /* Ensures the video fills its container */
+  display: block;
+  position: ;
+}
+
+.page4-text {
+  padding: 20px; /* Optional padding for the text area */
+}
 
 .benchmark h3 {
   margin: 0;
@@ -202,7 +244,7 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  column-gap: 20px;
+  gap: 20px;
 }
 
 .attr {

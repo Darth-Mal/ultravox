@@ -4,6 +4,20 @@ const Ultravox = () => {
   return (
     <>
       <header>
+        <video
+          className="tech-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            //   objectFit: "cover",
+            position: "absolute",
+            height: "100%",
+          }}
+        >
+          <source src="neww.webm" type="video/webm" />
+        </video>
         <div className="navbar">
           {" "}
           <h3>ULTRAVOX</h3>
@@ -182,10 +196,17 @@ const Ultravox = () => {
 
       <div className="page4and5">
         <div className="page-4 page">
-          <div className="page-4-vid"></div>
+          <div className="page-4-vid">
+            <video className="box-video" autoPlay muted loop playsInline>
+              <source
+                src="rBFbhC3XXYalVYHQjoK7KyfwXWE.webm"
+                type="video/webm"
+              />
+            </video>
+          </div>
           <div className="page4-text">
-            <div className="page-1-title">
-              <h1>Customize it, then run it anywhere </h1>
+            <div className="page-4-title">
+              <h1>Customize it, then run it anywhere</h1>
               <h2>(even on-prem)</h2>
               <p>
                 Whether it's adding support for additional languages,
