@@ -190,7 +190,8 @@ header {
 
 .page-4-vid {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  /* overflow: hidden; */
 }
 
 .page-4-title {
@@ -202,7 +203,9 @@ header {
   height: 150%;
   object-fit: cover; /* Ensures the video fills its container */
   display: block;
-  position: ;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-150px);
 }
 
 .page4-text {
