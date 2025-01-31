@@ -124,8 +124,11 @@ header {
 
 .tech-video {
   z-index: -1;
-  right: 0;
-  top: -50px;
+  right: 0px;
+  top: -100px;
+  position: absolute;
+  /* width: 110%; */
+  height: 110%;
 }
 
 .tryout-body {
@@ -234,7 +237,7 @@ header {
 .benchmark-bar-5,
 .benchmark-bar-6 {
   /* display: block; */
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.1);
   height: 6px;
   width: 100%;
 }
@@ -271,4 +274,52 @@ header {
 
 .sub-text {
   width: 50%;
+}
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  animation: none; /* Handled manually */
+}
+
+.percentage-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 282.6;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.quadrant-circle {
+  animation: quadrantProgress 4s linear infinite;
+}
+
+@keyframes quadrantProgress {
+  0% {
+    stroke-dashoffset: 282.6; /* Full circumference */
+  }
+  25% {
+    stroke-dashoffset: 211.95; /* First quadrant */
+  }
+  50% {
+    stroke-dashoffset: 141.3; /* Second quadrant */
+  }
+  75% {
+    stroke-dashoffset: 70.65; /* Third quadrant */
+  }
+  100% {
+    stroke-dashoffset: 0; /* Full circle */
+  }
 }

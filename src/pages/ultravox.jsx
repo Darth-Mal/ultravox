@@ -1,21 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Ultravox = () => {
+  const [percentage, setPercentage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPercentage((prev) => (prev < 100 ? prev + 1 : 0));
+    }, 10); // Updates every 10ms to complete in 1 second
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <header>
-        <video
-          className="tech-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{
-            //   objectFit: "cover",
-            position: "absolute",
-            height: "100%",
-          }}
-        >
+        <video className="tech-video" autoPlay muted loop playsInline>
           <source src="neww.webm" type="video/webm" />
         </video>
         <div className="navbar">
@@ -108,7 +106,31 @@ const Ultravox = () => {
         <div className="page-3-body">
           <div className="descriptions">
             <div className="desc-1">
-              <div className="circle"></div>
+              <div className="circle-container">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="tomato"
+                    strokeWidth="5"
+                    strokeDasharray="282.6" /* Circumference of the circle */
+                    strokeDashoffset={282.6 - (282.6 * percentage) / 100}
+                    className="circle"
+                  />
+                  <text
+                    x="50%"
+                    y="50%"
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    fontSize="18"
+                    fill="#fff"
+                  >
+                    {percentage <= 100 ? `${percentage}%` : ""}
+                  </text>
+                </svg>
+              </div>
               <div className="desc-body">
                 <p>
                   {" "}
@@ -122,7 +144,41 @@ const Ultravox = () => {
               </div>
             </div>
             <div className="desc-1">
-              <div className="circle"></div>
+              <div className="circle-container">
+                {/* Second Circle - Quadrant Animation */}
+                <svg
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100"
+                  strokeDasharray="70.65 4.35" /* Each quadrant with spacing between */
+                  className="quadrant-circle"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="aliceblue"
+                    strokeWidth="5"
+                    strokeDasharray="282.6" /* Full circumference of the circle */
+                    strokeDashoffset={
+                      282.6 - (282.6 * percentage) / 25
+                    } /* Divides circle into 4 quadrants */
+                    className="quadrant-circle"
+                  />
+
+                  <text
+                    x="50%"
+                    y="50%"
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    fontSize="18"
+                    fill="#fff"
+                  >
+                    {percentage <= 100 ? `${percentage}%` : ""}
+                  </text>
+                </svg>
+              </div>
               <div className="desc-body">
                 <p>
                   {" "}
@@ -152,42 +208,102 @@ const Ultravox = () => {
                   <p>Ultravox 0.4.1 Llama 3.1 70B</p>
                   <p>38.97</p>
                 </div>
-                <div className="benchmark-bar-1"></div>
+                <div className="benchmark-bar-1">
+                  <div
+                    className="benchmarker"
+                    style={{
+                      height: "100%",
+                      background:
+                        "linear-gradient(225deg, rgb(255, 195, 113) 0%, rgb(255, 147, 111) 33.3333%, rgb(255, 95, 109) 66.6667%, rgb(221, 69, 88) 100%)",
+
+                      width: "78%",
+                    }}
+                  ></div>
+                </div>
               </div>
               <div className="benchmark-2 bnchmrk">
                 <div className="top">
                   <p>GPT-4o Realtime</p>
                   <p>40.35</p>
                 </div>
-                <div className="benchmark-bar-2"></div>
+                <div className="benchmark-bar-2">
+                  <div
+                    className="benchmarker"
+                    style={{
+                      height: "100%",
+                      backgroundColor: " rgba(240, 248, 255, 0.5)",
+                      width: "81%",
+                    }}
+                  ></div>
+                </div>
               </div>{" "}
               <div className="benchmark-3 bnchmrk">
                 <div className="top">
                   <p>Ultravox 0.4.1 Llama 3.1 8B</p>
                   <p>33.97</p>
                 </div>
-                <div className="benchmark-bar-3"></div>
+                <div className="benchmark-bar-3">
+                  <div
+                    className="benchmarker"
+                    style={{
+                      height: "100%",
+                      background:
+                        "linear-gradient(225deg, rgb(255, 195, 113) 0%, rgb(255, 147, 111) 33.3333%, rgb(255, 95, 109) 66.6667%, rgb(221, 69, 88) 100%)",
+
+                      width: "68%",
+                    }}
+                  ></div>
+                </div>
               </div>{" "}
               <div className="benchmark-4 bnchmrk">
                 <div className="top">
                   <p>Ultravox 0.4.1 Mistral NeMo (12B)</p>
                   <p>33.59</p>
                 </div>
-                <div className="benchmark-bar-4"></div>
+                <div className="benchmark-bar-4">
+                  <div
+                    className="benchmarker"
+                    style={{
+                      height: "100%",
+                      background:
+                        "linear-gradient(225deg, rgb(255, 195, 113) 0%, rgb(255, 147, 111) 33.3333%, rgb(255, 95, 109) 66.6667%, rgb(221, 69, 88) 100%)",
+
+                      width: "67%",
+                    }}
+                  ></div>
+                </div>
               </div>{" "}
               <div className="benchmark-5 bnchmrk">
                 <div className="top">
                   <p>Qwen2-Audio- 7B-Instruct</p>
                   <p>28.43</p>
                 </div>
-                <div className="benchmark-bar-5"></div>
+                <div className="benchmark-bar-5">
+                  <div
+                    className="benchmarker"
+                    style={{
+                      height: "100%",
+                      backgroundColor: " rgba(240, 248, 255, 0.5)",
+                      width: "57%",
+                    }}
+                  ></div>
+                </div>
               </div>{" "}
               <div className="benchmark-6 bnchmrk">
                 <div className="top">
                   <p>ICTNLP Llama-Omni Llama 3.1 8B</p>
                   <p>6.61</p>
                 </div>
-                <div className="benchmark-bar-6"></div>
+                <div className="benchmark-bar-6">
+                  <div
+                    className="benchmarker"
+                    style={{
+                      height: "100%",
+                      backgroundColor: " rgba(240, 248, 255, 0.5)",
+                      width: "13%",
+                    }}
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
