@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import RecordVoiceOverOutlinedIcon from "@mui/icons-material/RecordVoiceOverOutlined";
+import SettingsPhoneOutlinedIcon from "@mui/icons-material/SettingsPhoneOutlined";
+import TranslateOutlinedIcon from "@mui/icons-material/TranslateOutlined";
+import ExtensionOutlinedIcon from "@mui/icons-material/ExtensionOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 
 const Ultravox = () => {
   const [percentage, setPercentage] = useState(0);
@@ -13,9 +18,6 @@ const Ultravox = () => {
   return (
     <>
       <header>
-        <video className="tech-video" autoPlay muted loop playsInline>
-          <source src="neww.webm" type="video/webm" />
-        </video>
         <div className="navbar">
           {" "}
           <h3>ULTRAVOX</h3>
@@ -27,17 +29,19 @@ const Ultravox = () => {
           <h1 className="h1">
             Build AI voice agents that communicate like we do
           </h1>
-          <p>
+          {/* <p>
             Cutting-edge AI speech for <strong>5¢ per minute.</strong> Create
             and deploy highly effective and natural Voice Agents in no time.
-          </p>
+          </p> */}
           <div className="get-started-container">
             <button className="get-started">Get Started</button>
-            <p>Free to get started</p>
+            {/* <p>Free to get started</p> */}
           </div>
         </div>
-
-        <div className="tryitout-container">
+        <video className="tech-video" autoPlay muted loop playsInline>
+          <source src="neww.webm" type="video/webm" />
+        </video>
+        {/* <div className="tryitout-container">
           <div className="tryitout-header">
             <p>TRY IT OUT</p>
             <p>ver 0.41</p>
@@ -50,7 +54,7 @@ const Ultravox = () => {
               <p>or call 1 844-741-5700</p>{" "}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="page-2 page">
@@ -62,7 +66,8 @@ const Ultravox = () => {
 
         <div className="page-2-cards">
           <div className="cards card-1">
-            ⚙<h2>Beyond Speech Recognition</h2>
+            <RecordVoiceOverOutlinedIcon style={{ fontSize: "3em" }} />
+            <h2>Beyond Speech Recognition</h2>
             <p>
               Ultravox is an advanced LLM that processes speech directly,
               without conversion to text. This enables much more natural and
@@ -70,7 +75,8 @@ const Ultravox = () => {
             </p>
           </div>
           <div className="cards card-2">
-            📞<h2>Web or VoIP Ready</h2>
+            <SettingsPhoneOutlinedIcon style={{ fontSize: "3em" }} />
+            <h2>Web or VoIP Ready</h2>
             <p>
               Seamlessly integrate Ultravox into your web, native app, or
               phone-based products with minimal effort. It comes with SDKs for
@@ -78,7 +84,8 @@ const Ultravox = () => {
             </p>
           </div>
           <div className="cards card-3">
-            💬<h2>Multi-lingual by default</h2>
+            <TranslateOutlinedIcon style={{ fontSize: "3em" }} />
+            <h2>Multi-lingual by default</h2>
             <p>
               Ultravox is fluent in all major languages, and easily adaptable
               support new languages or accents, ensuring smooth communication
@@ -86,7 +93,8 @@ const Ultravox = () => {
             </p>
           </div>
           <div className="cards card-4">
-            📳<h2>BYOM (Bring Your Own Model)</h2>
+            <ExtensionOutlinedIcon style={{ fontSize: "3em" }} />
+            <h2>BYOM (Bring Your Own Model)</h2>
             <p>
               Ultravox gives you the flexibility to work with any open-source
               model, even your own fine-tuned models.
@@ -339,43 +347,61 @@ const Ultravox = () => {
 
         <div className="page-5">
           <h1>All the basics, plus some </h1>
-          <h3>for just 5₵/minute</h3>
+          {/* <h3>for just 5₵/minute</h3> */}
 
           <div className="attributes">
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>{" "}
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>{" "}
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>{" "}
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>{" "}
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>{" "}
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>{" "}
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>{" "}
             <div className="attr">
-              <div className="attr-emoji">💪🏾</div>
+              <div className="attr-emoji">
+                <SettingsOutlinedIcon />
+              </div>
               <p>Function Calling</p>
             </div>
           </div>

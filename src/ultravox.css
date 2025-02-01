@@ -47,10 +47,21 @@ header {
   justify-content: center;
   align-items: center;
   gap: 32px;
+  overflow: hidden;
+  position: relative;
 }
 
 .page-1-title {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.page-1-title h1 {
+  text-align: center;
 }
 
 .page-1-title h1,
@@ -62,8 +73,8 @@ header {
 .get-started-container {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
 }
 
 .get-started-container button {
@@ -124,11 +135,11 @@ header {
 
 .tech-video {
   z-index: -1;
-  right: 0px;
+  right: -110px;
   top: -100px;
   position: absolute;
   /* width: 110%; */
-  height: 110%;
+  height: 120%;
 }
 
 .tryout-body {
@@ -157,6 +168,10 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 16px;
   border-radius: 6px;
+}
+
+.benchmark {
+  width: 120%;
 }
 
 .page-3-body {
